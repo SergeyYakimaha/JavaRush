@@ -21,6 +21,9 @@ public class Solution {
     public static class Beer implements Drink{
         @Override
         public boolean isAlcoholic() {
+
+
+
             return true;
         }
     }
