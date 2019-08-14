@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MinesweeperGame extends Game {
 
-    private static final int SIDE = 3;
+    private static final int SIDE = 9;
     private GameObject[][] gameField = new GameObject[SIDE][SIDE];
 
     private int countMinesOnField;
@@ -31,12 +31,12 @@ public class MinesweeperGame extends Game {
 
     private void win() {
         isGameStopped = true;
-        showMessageDialog(Color.RED, "WIN", Color.AQUA, 15);
+        showMessageDialog(Color.RED, "WIN", Color.AQUA, 30);
     }
 
     private void gameOver() {
         isGameStopped = true;
-        showMessageDialog(Color.RED, "GAME OVER", Color.AQUA, 15);
+        showMessageDialog(Color.RED, "GAME OVER", Color.AQUA, 30);
     }
 
     private void markTile(int x, int y) {
