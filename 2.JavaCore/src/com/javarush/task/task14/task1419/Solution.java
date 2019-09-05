@@ -1,5 +1,8 @@
 package com.javarush.task.task14.task1419;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +25,17 @@ public class Solution {
         try {
             float i = 1 / 0;
 
+            FileInputStream fileInputStream = new FileInputStream("ggg");
+
+
+        } catch (FileNotFoundException e) {
+            exceptions.add(e);
+        } catch (IOException e) {
+            exceptions.add(e);
         } catch (Exception e) {
             exceptions.add(e);
-        }
 
-        //напишите тут ваш код
+        }
 
     }
 }
