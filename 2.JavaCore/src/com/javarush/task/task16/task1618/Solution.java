@@ -11,7 +11,6 @@ public class Solution {
         testThread.interrupt();
     }
 
-    //Add your code below - добавь код ниже
     public static class TestThread extends Thread {
         @Override
         public void run() {
