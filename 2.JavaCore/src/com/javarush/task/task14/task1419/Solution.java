@@ -1,10 +1,10 @@
 package com.javarush.task.task14.task1419;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /* 
 Нашествие исключений
@@ -25,17 +25,20 @@ public class Solution {
         try {
             float i = 1 / 0;
 
-            FileInputStream fileInputStream = new FileInputStream("ggg");
-
-
-        } catch (FileNotFoundException e) {
-            exceptions.add(e);
-        } catch (IOException e) {
-            exceptions.add(e);
         } catch (Exception e) {
             exceptions.add(e);
-
         }
+
+        exceptions.add(new NullPointerException());
+        exceptions.add(new NegativeArraySizeException());
+        exceptions.add(new ArrayIndexOutOfBoundsException());
+        exceptions.add(new NoSuchElementException());
+        exceptions.add(new IOException());
+        exceptions.add(new NumberFormatException());
+        exceptions.add(new FileNotFoundException());
+        exceptions.add(new IllegalThreadStateException());
+        exceptions.add(new ClassCastException());
+
 
     }
 }
