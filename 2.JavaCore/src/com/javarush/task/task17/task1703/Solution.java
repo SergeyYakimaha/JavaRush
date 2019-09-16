@@ -13,6 +13,11 @@ public class Solution {
 
 
     public static void main(String[] args) {
+//        Thread n1 = new Note();
+//        Thread n2 = new Thread();
+//        Thread n3 = new Thread();
+//        n1.start();
+//        Thread.sleep(1000);
     }
 
     public static class Note {
