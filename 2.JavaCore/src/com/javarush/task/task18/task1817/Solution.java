@@ -1,10 +1,11 @@
-package com.javarush.task.task18.task1824;
+package com.javarush.task.task18.task1817;
 
 /* 
-Файлы и исключения
+Пробелы
 */
 
 public class Solution {
     public static void main(String[] args) {
+
     }
 }
