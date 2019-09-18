@@ -122,3 +122,21 @@
 2019-09-18 23:00:23 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
 2019-09-18 23:00:23 INFO  ApacheHttpClient.startGA(35) - GAService started.
 2019-09-18 23:00:23 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2019-09-18 23:01:23 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-18 23:02:23 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-18 23:02:50 WARN  PluginUtil.getCurrentTask(71) - Error while retrieving the task key.
+2019-09-18 23:03:01 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
+
+2019-09-18 23:03:01 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
+2019-09-18 23:03:13 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
+2019-09-18 23:03:13 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.33 ----------
+
+2019-09-18 23:03:13 INFO  ApacheHttpClient.createAsyncHttpClient(133) - 1 proxies selected. Type: DIRECT
+2019-09-18 23:03:13 INFO  ApacheHttpClient.<init>(91) - ApacheHttpClient was successfully instantiated.
+2019-09-18 23:03:15 INFO  ApacheHttpClient.testConnection(191) - responseCode = 200
+2019-09-18 23:03:15 INFO  ApacheHttpClient.testConnection(206) - result = true
+2019-09-18 23:03:17 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(583) - Waiting for server response.
+2019-09-18 23:03:18 INFO  ApacheHttpClient.refreshUserInfo(291) - responseCode = 200
+2019-09-18 23:03:18 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
+2019-09-18 23:03:18 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2019-09-18 23:03:18 INFO  AbstractRestApiClient.startService(71) - EventsService started.
