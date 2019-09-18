@@ -38,11 +38,8 @@ public class DecoratorApp {
         PrinterInterface chars = new PrintChars();
         chars.print();
 
-
         PrinterInterface pChars = new addNameDecorator(new PrintChars());
         PrinterInterface pNumber = new addNameDecorator(new PrintNumber());
-
-
 
         pChars.print();
         pNumber.print();
