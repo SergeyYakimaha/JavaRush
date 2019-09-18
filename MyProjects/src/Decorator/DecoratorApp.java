@@ -1,4 +1,4 @@
-package Decorator;
+package MyProjects.src.Decorator;
 
 public class DecoratorApp {
 
