@@ -140,3 +140,33 @@
 2019-09-18 23:03:18 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
 2019-09-18 23:03:18 INFO  ApacheHttpClient.startGA(35) - GAService started.
 2019-09-18 23:03:18 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2019-09-18 23:04:30 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
+
+2019-09-19 18:21:32 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
+2019-09-19 18:21:32 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.33 ----------
+
+2019-09-19 18:21:32 INFO  ApacheHttpClient.createAsyncHttpClient(133) - 1 proxies selected. Type: DIRECT
+2019-09-19 18:21:32 INFO  ApacheHttpClient.<init>(91) - ApacheHttpClient was successfully instantiated.
+2019-09-19 18:21:34 INFO  ApacheHttpClient.testConnection(191) - responseCode = 200
+2019-09-19 18:21:34 INFO  ApacheHttpClient.testConnection(206) - result = true
+2019-09-19 18:21:35 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(583) - Waiting for server response.
+2019-09-19 18:21:35 INFO  ApacheHttpClient.refreshUserInfo(291) - responseCode = 200
+2019-09-19 18:21:35 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
+2019-09-19 18:21:35 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2019-09-19 18:21:35 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2019-09-19 18:22:29 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-19 18:22:45 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-19 18:22:47 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
+
+2019-09-19 18:22:57 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
+2019-09-19 18:22:57 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.34 ----------
+
+2019-09-19 18:22:57 INFO  ApacheHttpClient.createAsyncHttpClient(133) - 1 proxies selected. Type: DIRECT
+2019-09-19 18:22:58 INFO  ApacheHttpClient.<init>(91) - ApacheHttpClient was successfully instantiated.
+2019-09-19 18:22:59 INFO  ApacheHttpClient.testConnection(191) - responseCode = 200
+2019-09-19 18:22:59 INFO  ApacheHttpClient.testConnection(206) - result = true
+2019-09-19 18:23:01 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(583) - Waiting for server response.
+2019-09-19 18:23:01 INFO  ApacheHttpClient.refreshUserInfo(291) - responseCode = 200
+2019-09-19 18:23:01 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
+2019-09-19 18:23:01 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2019-09-19 18:23:01 INFO  AbstractRestApiClient.startService(71) - EventsService started.
