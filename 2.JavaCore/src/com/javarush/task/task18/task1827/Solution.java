@@ -55,8 +55,7 @@ public class Solution {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 0)
-            if (args[0] == "-c") {
+        if (args.length != 0 && args[0] == "-c") {
                 Solution CrUD = new Solution();
                 CrUD.addOrder(args[1], args[2], args[3]);
 //        CrUD.addOrder("Шорты пляжные синие", "159.00", "12");
