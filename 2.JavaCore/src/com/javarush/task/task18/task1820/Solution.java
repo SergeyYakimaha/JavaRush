@@ -19,7 +19,6 @@ public class Solution {
             String[] stringNumbers = line.split("\\s");
 
             for (int i = 0; i < stringNumbers.length; i++) {
-
                 String intString = String.valueOf(Math.round(Float.parseFloat(stringNumbers[i])));
                 bufferedWriter.write(((i == stringNumbers.length - 1) ? intString : intString + " "));
             }
