@@ -45626,3 +45626,23 @@ java.lang.NullPointerException
 2019-09-20 09:44:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-20 09:44:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-20 09:44:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:45:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:45:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:45:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:46:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:46:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:46:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:47:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:47:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:47:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:48:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:48:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:48:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:49:45 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-20 09:49:46 INFO  ApacheHttpClient.completed(28) - responseCode = 400
+2019-09-20 09:49:46 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
+2019-09-20 09:49:46 WARN  TaskCompleted.run(70) - You already completed this task: "Считать с консоли имя файла."
+2019-09-20 09:49:46 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-20 09:49:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:49:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 09:49:59 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200

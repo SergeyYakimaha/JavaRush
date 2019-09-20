@@ -15,7 +15,7 @@ public class Solution {
         bufferedReader.close();
     }
 
-    public String getOrderInfo(String id) throws IOException {
+    private String getOrderInfo(String id) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(fileName)));
 
         String line;
