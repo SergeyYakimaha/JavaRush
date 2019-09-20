@@ -27,7 +27,7 @@ public class Solution {
     private void delOrder(String id) throws IOException {
         List<String> fileStringsList = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-                new FileInputStream(fileName), "windows-1251"));
+                new FileInputStream(fileName), "UTF-8"));
 
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
@@ -38,7 +38,7 @@ public class Solution {
         bufferedReader.close();
 
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileName), "windows-1251"));
+                new FileOutputStream(fileName), "UTF-8"));
 
         for (int i = 0; i < fileStringsList.size(); i++) {
             if (i > 0)
@@ -51,7 +51,7 @@ public class Solution {
     private void updOrder(String id, String productName, String price, String quantity) throws IOException {
         List<String> fileStringsList = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-                new FileInputStream(fileName), "windows-1251"));
+                new FileInputStream(fileName), "UTF-8"));
 
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
@@ -70,7 +70,7 @@ public class Solution {
         bufferedReader.close();
 
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileName), "windows-1251"));
+                new FileOutputStream(fileName), "UTF-8"));
 
         for (int i = 0; i < fileStringsList.size(); i++) {
             if (i > 0)
@@ -82,7 +82,7 @@ public class Solution {
 
     private void addOrder(String productName, String price, String quantity) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileName, true), "windows-1251"));
+                new FileOutputStream(fileName, true), "UTF-8"));
 
         productName = addSpaces(productName, 30);
         price = addSpaces(price, 8);
