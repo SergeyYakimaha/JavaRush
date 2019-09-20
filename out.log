@@ -45319,3 +45319,5 @@ java.lang.NullPointerException
 2019-09-20 19:24:16 INFO  ApacheHttpClient.startGA(35) - GAService started.
 2019-09-20 19:24:16 INFO  AbstractRestApiClient.startService(71) - EventsService started.
 2019-09-20 19:24:19 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-20 19:26:16 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-20 19:26:20 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
