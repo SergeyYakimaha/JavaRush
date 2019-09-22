@@ -14,8 +14,6 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         this.fileName1 = bufferedReader.readLine();
         this.fileName2 = bufferedReader.readLine();
-        this.fileName1 = "c:\\1\\1.txt";
-        this.fileName2 = "c:\\1\\2.txt";
         bufferedReader.close();
     }
 
