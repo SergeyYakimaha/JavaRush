@@ -16,13 +16,25 @@ public class Solution {
         bufferedReader.close();
 
         String[] stringParams = text.substring(text.indexOf("?") + 1).split("&");
+        String strOut = "";
 
         for (int i = 0; i < stringParams.length; i++) {
-            String [] params = stringParams[i].split("\\s");
+            strOut = strOut + stringParams[i].split("=")[0] + " ";
+        }
 
+        System.out.println(strOut.trim());
 
+        for (int i = 0; i < stringParams.length; i++) {
+            String[] params = stringParams[i].split("=");
+            if (params[0].equals("obj")) {
+                try {
+                    alert(Double.parseDouble(params[1]));
+                } catch (NumberFormatException e) {
+                    alert(params[1]);
+                }
             }
         }
+    }
 
     public static void alert(double value) {
         System.out.println("double: " + value);
