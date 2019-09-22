@@ -16,6 +16,12 @@ public class Solution {
         bufferedReader.close();
 
         PrintStream consoleStream = System.out;
+        /* можно сделать так и перенаправлять весь консольный вывод сразу в файл
+
+        PrintStream ps = new PrintStream(new FileOutputStream(fileName));
+        System.setOut(ps);
+        testString.printSomething();
+        */
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
 
