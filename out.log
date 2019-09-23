@@ -46001,29 +46001,3 @@ java.lang.NullPointerException
 2019-09-20 14:57:57 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-20 14:58:57 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-20 14:59:57 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
-2019-09-20 15:00:18 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
-
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-20 15:00:19 INFO  ApacheHttpClient.getTask(469) - responseCode = 200
-2019-09-23 07:20:02 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
-2019-09-23 07:20:02 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.34 ----------
-
-2019-09-23 07:20:02 INFO  ApacheHttpClient.createAsyncHttpClient(133) - 1 proxies selected. Type: DIRECT
-2019-09-23 07:20:02 INFO  ApacheHttpClient.<init>(91) - ApacheHttpClient was successfully instantiated.
-2019-09-23 07:20:07 INFO  ApacheHttpClient.testConnection(191) - responseCode = 200
-2019-09-23 07:20:07 INFO  ApacheHttpClient.testConnection(206) - result = true
-2019-09-23 07:20:07 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(583) - Waiting for server response.
-2019-09-23 07:20:07 INFO  ApacheHttpClient.refreshUserInfo(291) - responseCode = 200
-2019-09-23 07:20:07 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
-2019-09-23 07:20:07 INFO  ApacheHttpClient.startGA(35) - GAService started.
-2019-09-23 07:20:07 INFO  AbstractRestApiClient.startService(71) - EventsService started.
-2019-09-23 07:20:14 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
-2019-09-23 07:21:07 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
-2019-09-23 07:22:07 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
-2019-09-23 07:23:07 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
-2019-09-23 07:24:07 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
