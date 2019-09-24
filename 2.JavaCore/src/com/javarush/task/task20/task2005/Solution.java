@@ -11,14 +11,6 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String str = bufferedReader.readLine();
-        String[] arrayStr = str.split(",");
-        for (int i = 0; i < arrayStr.length; i++) {
-            System.out.println(arrayStr[i]);
-        }
-
-
         //исправь outputStream/inputStream в соответствии с путем к твоему реальному файлу
         try {
             //File your_file_name = File.createTempFile("your_file_name", null);
@@ -37,7 +29,7 @@ public class Solution {
             Human person1 = new Human();
             Human person2 = new Human();
 
-            System.out.println(person1.equals(person2));
+            System.out.println(person1.equals(person1));
             System.out.println(ivanov.equals(somePerson));
             ivanov.equals(somePerson);
 
@@ -58,7 +50,7 @@ public class Solution {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return false;
+            if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
             Human human = (Human) o;

@@ -11,7 +11,8 @@ public class Solution {
         //вы можете найти your_file_name.tmp в папке TMP или исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
         try {
 
-            File yourFile = File.createTempFile("your_file_nabbbme", null);
+            //File yourFile = File.createTempFile("your_file_name", null);
+            File yourFile = new File("c:\\1.txt");
             OutputStream outputStream = new FileOutputStream(yourFile);
             InputStream inputStream = new FileInputStream(yourFile);
 
@@ -27,7 +28,8 @@ public class Solution {
             loadedObject.j = 7;
 
             loadedObject.load(inputStream);
-            //here check that the classWithStatic object is equal to the loadedObject object - проверьте тут, что classWithStatic и loadedObject равны
+
+            System.out.println(classWithStatic.equals(loadedObject));
 
             outputStream.close();
             inputStream.close();
@@ -48,10 +50,23 @@ public class Solution {
 
         public void save(OutputStream outputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            try (PrintWriter pw = new PrintWriter(outputStream)) {
+                pw.println(Solution.ClassWithStatic.staticString);
+                pw.println(this.i);
+                pw.println(this.j);
+                pw.flush();
+            }
         }
 
         public void load(InputStream inputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                Solution.ClassWithStatic.staticString = reader.readLine();
+                this.i = Integer.parseInt(reader.readLine());
+                this.j = Integer.parseInt(reader.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
