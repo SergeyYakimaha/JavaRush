@@ -1,3 +1,5 @@
+package Inheritance;
+
 public class TestClass {
     public static void main(String[] args) {
         A a1 = new A("name 1");

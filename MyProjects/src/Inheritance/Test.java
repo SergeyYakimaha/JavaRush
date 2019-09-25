@@ -1,3 +1,5 @@
+package Inheritance;
+
 public class Test {
     public static class Animal {
         public void print(){
