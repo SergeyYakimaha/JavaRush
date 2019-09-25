@@ -29,6 +29,7 @@ public class MainClass {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ClassC c = new ClassC("aaa");
+        c.classB = new ClassB("bbb");
         c.classCName = "ClassCName";
         c.classBName = "ClassBName";
         c.classAName = "ClassAName";
@@ -36,6 +37,8 @@ public class MainClass {
         MainClass.serialize(c);
 
         ClassC serializeObject = (ClassC)MainClass.deserialize();
+        System.out.println(serializeObject.classB.classBName);
+
         System.out.println(serializeObject.classCName);
         System.out.println(serializeObject.classBName);
         System.out.println(serializeObject.classAName);
