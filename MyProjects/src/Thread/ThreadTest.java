@@ -1,6 +1,6 @@
 package Thread;
 
-public class ThreadTest extends Thread{
+public class ThreadTest extends Thread {
     @Override
     public void run() {
         while(!isInterrupted()){

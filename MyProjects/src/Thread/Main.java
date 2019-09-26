@@ -6,6 +6,7 @@ public class Main {
         Thread thread = new Thread(object);
         ThreadTest threadTest = new ThreadTest();
         threadTest.start();
+        threadTest.join();
         thread.start();
         Thread.sleep(100);
         thread.interrupt();
