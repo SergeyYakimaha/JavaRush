@@ -2,10 +2,10 @@ package Serialization;
 
 import java.io.*;
 
-public class MainClass {
+public class MainSerializable {
     final static String FILE_NAME = "c:\\File.dat";
 
-    public static void serialize(ClassC object) throws IOException {
+    public static void serialize(Object object) throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
@@ -15,30 +15,22 @@ public class MainClass {
         objectOutputStream.close();
     }
 
-    public static ClassC deserialize() throws IOException, ClassNotFoundException {
+    public static Object deserialize() throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(FILE_NAME);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-        ClassC object = (ClassC) objectInputStream.readObject();
+        Object object = objectInputStream.readObject();
 
         objectInputStream.close();
 
         return object;
-
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        ClassC object = new ClassC("aaa");
-        object.classCName = "ClassCName";
-        object.classBName = "ClassBName";
-        object.classAName = "ClassAName";
+        SerializableClass serializableClass = new SerializableClass();
 
-        MainClass.serialize(object);
+        serialize(serializableClass);
 
-        ClassC serializeObject = MainClass.deserialize();
-
-        System.out.println(serializeObject.classCName);
-        System.out.println(serializeObject.classBName);
-        System.out.println(serializeObject.classAName);
+        SerializableClass newObject = (SerializableClass) deserialize();
     }
 }
