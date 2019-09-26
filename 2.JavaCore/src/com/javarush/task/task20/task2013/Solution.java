@@ -83,12 +83,12 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Person mother = new Person("Люда", "Якимаха", 60);
-        Person father = new Person("Юра", "Якимаха", 65);
-        Person son = new Person("Даша", "Якимаха", 10);
-        Person daughter = new Person("Саша", "Якимаха", 20);
+        Person mother = new Person("Люда", "Петров", 60);
+        Person father = new Person("Юра", "Петров", 65);
+        Person son = new Person("Даша", "Петров", 10);
+        Person daughter = new Person("Саша", "Петров", 20);
 
-        Person sergey = new Person("Сергей", "Якимаха", 41);
+        Person sergey = new Person("Сергей", "Петров", 41);
         sergey.setMother(mother);
         sergey.setFather(father);
         sergey.setChildren(Arrays.asList(daughter, son));
