@@ -11,12 +11,12 @@ public class Solution {
         public int i;
         public int j;
 
-        private void writeObject1(ObjectOutputStream stream) throws IOException {
+        private void writeObject(ObjectOutputStream stream) throws IOException {
             stream.defaultWriteObject();
             stream.writeObject(staticString);
         }
 
-        private void readObject1(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
             stream.defaultReadObject();
             staticString = (String) stream.readObject();
         }
