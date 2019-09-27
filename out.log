@@ -48121,3 +48121,12 @@ java.lang.NullPointerException
 2019-09-27 16:26:34 INFO  ApacheHttpClient.refreshUserInfo(297) - User information received.
 2019-09-27 16:26:34 INFO  ApacheHttpClient.startGA(35) - GAService started.
 2019-09-27 16:26:34 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2019-09-27 16:29:35 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+2019-09-27 16:29:40 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-27 16:29:40 INFO  ApacheHttpClient.getFilteredTasks(322) - responseCode = 200
+2019-09-27 16:29:46 INFO  ApacheHttpClient.getFilteredTasks(322) - responseCode = 200
+2019-09-27 16:29:59 INFO  ApacheHttpClient.getFilteredTasks(322) - responseCode = 200
+2019-09-27 16:30:09 INFO  ApacheHttpClient.getFilteredTasks(322) - responseCode = 200
+2019-09-27 16:30:22 INFO  ApacheHttpClient.getTaskTemplateInfo(339) - responseCode = 200
+2019-09-27 16:30:23 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
+2019-09-27 16:30:35 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
