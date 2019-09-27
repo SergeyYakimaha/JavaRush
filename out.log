@@ -46933,6 +46933,7 @@ java.lang.NullPointerException
 2019-09-23 15:41:04 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-23 15:42:04 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
 2019-09-23 15:43:04 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+<<<<<<< HEAD
 2019-09-23 21:33:25 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
 2019-09-23 21:33:25 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.34 ----------
 
@@ -48130,3 +48131,5 @@ java.lang.NullPointerException
 2019-09-27 16:30:22 INFO  ApacheHttpClient.getTaskTemplateInfo(339) - responseCode = 200
 2019-09-27 16:30:23 INFO  ApacheHttpClient.getWebResourceAsStream(483) - responseCode = 200
 2019-09-27 16:30:35 INFO  ApacheHttpClient.sendEvent(516) - responseCode = 200
+=======
+>>>>>>> 5fb853656e18cd8820a48ede24df03cc38238e1d
