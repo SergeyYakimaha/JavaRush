@@ -28,12 +28,12 @@ public class MainClass {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-//        ClassC object = new ClassC("aaa");
-//        object.classCName = "ClassCName";
-//        object.classBName = "ClassBName";
-//        object.classAName = "ClassAName";
-//
-//        MainClass.serialize(object);
+        ClassC object = new ClassC("aaa");
+        object.classCName = "ClassCName";
+        object.classBName = "ClassBName";
+        object.classAName = "ClassAName";
+
+        MainClass.serialize(object);
 
         ClassC serializeObject = MainClass.deserialize();
 

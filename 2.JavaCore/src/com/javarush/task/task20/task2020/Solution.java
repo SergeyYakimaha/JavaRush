@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 */
 public class Solution {
 
-    public static final String FILE_NAME = "C:\\person.dat";
+    public static final String FILE_NAME = "C:\\JavaRushData\\person.dat";
 
     public static void serializable(Person person) throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME);
@@ -16,6 +16,7 @@ public class Solution {
 
         objectOutputStream.writeObject(person);
 
+        objectOutputStream.flush();
         objectOutputStream.close();
         fileOutputStream.close();
     }
@@ -31,7 +32,8 @@ public class Solution {
         return person;
     }
 
-    public static class Person implements Serializable {
+    //public static class Person implements Serializable {
+    public static class Person implements Externalizable {
         String firstName;
         String lastName;
         transient String fullName;
@@ -40,6 +42,26 @@ public class Solution {
         Sex sex;
         transient PrintStream outputStream;
         transient Logger logger;
+
+        @Override
+        public void writeExternal(ObjectOutput out) throws IOException {
+            System.out.println("writeExternal");
+            out.writeObject(this.firstName);
+            out.writeObject(this.lastName);
+            out.writeObject(this.sex);
+        }
+
+        @Override
+        public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+            System.out.println("readExternal");
+            this.firstName = (String)in.readObject();
+            this.lastName = (String)in.readObject();
+            this.sex = (Sex) in.readObject();
+        }
+
+        public Person(){
+            System.out.println("constructor");
+        }
 
         Person(String firstName, String lastName, String country, Sex sex) {
             this.firstName = firstName;
