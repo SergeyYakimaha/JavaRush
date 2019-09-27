@@ -1,29 +1,15 @@
 package com.javarush.task.task20.task2013;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.util.List;
 
 /* 
 Externalizable Person
 */
 public class Solution {
-    public static final String FILE_NAME_ = "c:\\1.dat";
-
-    public static void serializable(Person object) throws IOException {
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE_NAME_, true));
-        objectOutputStream.writeObject(object);
-        objectOutputStream.flush();
-        objectOutputStream.close();
-    }
-
-    public static Person deserializable() throws IOException, ClassNotFoundException {
-        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE_NAME_));
-        Person object = (Person) objectInputStream.readObject();
-        objectInputStream.close();
-        return object;
-    }
-
     public static class Person implements Externalizable{
         private String firstName;
         private String lastName;
@@ -36,9 +22,6 @@ public class Solution {
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
-        }
-
-        public Person(){
         }
 
         public void setMother(Person mother) {
@@ -74,27 +57,7 @@ public class Solution {
         }
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Person mother = new Person("Люда","Якимаха", 68);
-        Person father = new Person("Юра","Якимаха", 70);
-        Person son = new Person("Саша","Якимаха", 8);
-        Person daughter = new Person("Даша","Якимаха", 15);
-
-        Person I = new Person("Серега", "Якимаха", 41);
-        I.setMother(mother);
-        I.setFather(father);
-        I.setChildren(Arrays.asList(son, daughter));
-
-//        serializable(mother);
-//        serializable(father);
-//        serializable(son);
-//        serializable(daughter);
-        serializable(I);
-
-//        Person.serializable(I);
-//
-       Person myClone = deserializable();
-
+    public static void main(String[] args) {
 
     }
 }

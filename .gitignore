@@ -4,7 +4,10 @@
 target/
 .idea/
 .idea
-out/
-out
+.repository/
+/out/
+/JavaRushPlugin.properties
+/Instruction.png
 out.log
-JavaRushPlugin.properties
+/out.log
+/out.log.*
