@@ -75,22 +75,22 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
 
         int resultSearch = 0;
 
-        if ((mask & PART_OF_NAME) != 0){
+        if ((mask & PART_OF_NAME) == PART_OF_NAME){
             if (file.getFileName().toString().contains(getPartOfName()))
                 resultSearch += PART_OF_NAME;
         }
 
-        if ((mask & PART_OF_CONTENT) != 0) {
+        if ((mask & PART_OF_CONTENT) == PART_OF_CONTENT) {
             if (new String(content).contains(getPartOfContent()))
                 resultSearch += PART_OF_CONTENT;
         }
 
-        if ((mask & MIN_SIZE) != 0) {
+        if ((mask & MIN_SIZE) == MIN_SIZE) {
             if (content.length > getMinSize())
                 resultSearch += MIN_SIZE;
         }
 
-        if ((mask & MAX_SIZE) != 0) {
+        if ((mask & MAX_SIZE) == MAX_SIZE) {
             if (content.length < getMaxSize())
                 resultSearch += MAX_SIZE;
         }
