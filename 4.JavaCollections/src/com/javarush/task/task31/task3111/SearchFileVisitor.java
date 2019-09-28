@@ -17,7 +17,7 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
     private int minSize;
     private int maxSize;
 
-    List<Path> listPath = new ArrayList<>();
+    private List<Path> foundFiles = new ArrayList<>();
 
     private final int PART_OF_NAME = 1;          // 00001
     private final int PART_OF_CONTENT = 2;       // 00010
@@ -56,9 +56,12 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
         this.maxSize = maxSize;
     }
 
-    public List<Path> getFoundFiles() {
+    public List<Path> getListPath() {
+        return foundFiles;
+    }
 
-        return listPath;
+    public List<Path> getFoundFiles() {
+        return getListPath();
     }
 
     @Override
@@ -72,29 +75,28 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
 
         int resultSearch = 0;
 
-        if ((mask & PART_OF_NAME) != 0) {
-            if (!file.getFileName().toString().contains(partOfName))
+        if ((mask & PART_OF_NAME) != 0){
+            if (file.getFileName().toString().contains(getPartOfName()))
                 resultSearch += PART_OF_NAME;
         }
 
         if ((mask & PART_OF_CONTENT) != 0) {
-            if (new String(content).contains(partOfContent))
+            if (new String(content).contains(getPartOfContent()))
                 resultSearch += PART_OF_CONTENT;
         }
 
         if ((mask & MIN_SIZE) != 0) {
-            if (content.length > MIN_SIZE)
+            if (content.length > getMinSize())
                 resultSearch += MIN_SIZE;
         }
 
-        if ((mask & MIN_SIZE) != 0) {
-            if (content.length > MIN_SIZE)
-                resultSearch += MIN_SIZE;
+        if ((mask & MAX_SIZE) != 0) {
+            if (content.length < getMaxSize())
+                resultSearch += MAX_SIZE;
         }
 
         if (mask == resultSearch)
-            listPath.add(file);
-
+            foundFiles.add(file);
 
         return super.visitFile(file, attrs);
     }

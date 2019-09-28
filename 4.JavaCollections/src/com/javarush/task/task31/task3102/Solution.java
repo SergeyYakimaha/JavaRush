@@ -1,7 +1,6 @@
 package com.javarush.task.task31.task3102;
 
 import java.io.IOException;
-import java.util.BitSet;
 import java.util.List;
 
 /* 
@@ -14,6 +13,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println();
+        
     }
 }
