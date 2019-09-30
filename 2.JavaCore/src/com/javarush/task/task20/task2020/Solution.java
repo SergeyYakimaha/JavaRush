@@ -8,11 +8,7 @@ import java.util.logging.Logger;
 */
 public class Solution {
 
-<<<<<<< HEAD
-    public static final String FILE_NAME = "C:\\JavaRushData\\person.dat";
-=======
     public static final String FILE_NAME = "C:\\person.dat";
->>>>>>> 5fb853656e18cd8820a48ede24df03cc38238e1d
 
     public static void serializable(Person person) throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME);
@@ -20,10 +16,6 @@ public class Solution {
 
         objectOutputStream.writeObject(person);
 
-<<<<<<< HEAD
-        objectOutputStream.flush();
-=======
->>>>>>> 5fb853656e18cd8820a48ede24df03cc38238e1d
         objectOutputStream.close();
         fileOutputStream.close();
     }
@@ -39,12 +31,7 @@ public class Solution {
         return person;
     }
 
-<<<<<<< HEAD
-    //public static class Person implements Serializable {
-    public static class Person implements Externalizable {
-=======
     public static class Person implements Serializable {
->>>>>>> 5fb853656e18cd8820a48ede24df03cc38238e1d
         String firstName;
         String lastName;
         transient String fullName;
@@ -54,29 +41,6 @@ public class Solution {
         transient PrintStream outputStream;
         transient Logger logger;
 
-<<<<<<< HEAD
-        @Override
-        public void writeExternal(ObjectOutput out) throws IOException {
-            System.out.println("writeExternal");
-            out.writeObject(this.firstName);
-            out.writeObject(this.lastName);
-            out.writeObject(this.sex);
-        }
-
-        @Override
-        public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-            System.out.println("readExternal");
-            this.firstName = (String)in.readObject();
-            this.lastName = (String)in.readObject();
-            this.sex = (Sex) in.readObject();
-        }
-
-        public Person(){
-            System.out.println("constructor");
-        }
-
-=======
->>>>>>> 5fb853656e18cd8820a48ede24df03cc38238e1d
         Person(String firstName, String lastName, String country, Sex sex) {
             this.firstName = firstName;
             this.lastName = lastName;
