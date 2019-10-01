@@ -20,6 +20,8 @@ public class Solution {
 
         properties = solution.getProperties("4.JavaCollections/src/com/javarush/task/task31/task3109/notExists");
         properties.list(System.out);
+
+        properties.clear();
     }
 
     public Properties getProperties(String fileName) throws IOException {
