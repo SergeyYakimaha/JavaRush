@@ -15,13 +15,21 @@ public class Solution {
         Properties properties = solution.getProperties("4.JavaCollections/src/com/javarush/task/task31/task3109/properties.xml");
         properties.list(System.out);
 
+        System.out.println(properties.getProperty("level"));
+
         properties = solution.getProperties("4.JavaCollections/src/com/javarush/task/task31/task3109/properties.txt");
         properties.list(System.out);
 
         properties = solution.getProperties("4.JavaCollections/src/com/javarush/task/task31/task3109/notExists");
         properties.list(System.out);
 
-        properties.clear();
+        System.out.println(properties.getProperty("level"));
+
+        //проходимся по всем ключам и печатаем все их значения на консоль
+        for (String key : properties.stringPropertyNames())
+        {
+            System.out.println(properties.get(key));
+        }
     }
 
     public Properties getProperties(String fileName) throws IOException {
