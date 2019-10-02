@@ -81,7 +81,8 @@ public class SnakeGame extends Game {
     }
 
     private void createGame() {
-        setTurnTimer(turnDelay = 300);
+        turnDelay = 300;
+        setTurnTimer(turnDelay);
         snake = new Snake(WIDTH / 2, HEIGHT / 2);
         createNewApple();
         isGameStopped = false;
