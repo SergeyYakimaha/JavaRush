@@ -1,8 +1,6 @@
 package com.javarush.task.task32.task3210;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.RandomAccessFile;
 
 /* 
