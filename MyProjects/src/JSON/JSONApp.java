@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JSONApp {
 
@@ -20,6 +22,11 @@ public class JSONApp {
 
     public static void main(String[] args) throws IOException
     {
+        List<Integer> ints = new ArrayList<Integer>();
+        ints.add(1);
+        ints.add(2);
+        List<? extends Number> nums = ints;
+
         //создание объекта для сериализации в JSON
         Cat cat = new Cat();
         cat.name = "Murka";
