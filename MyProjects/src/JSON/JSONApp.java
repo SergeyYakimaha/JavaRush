@@ -22,10 +22,12 @@ public class JSONApp {
 
     public static void main(String[] args) throws IOException
     {
+
         List<Integer> ints = new ArrayList<Integer>();
         ints.add(1);
         ints.add(2);
         List<? extends Number> nums = ints;
+        nums.add(null);
 
         //создание объекта для сериализации в JSON
         Cat cat = new Cat();
