@@ -30,7 +30,7 @@ public class Space {
      * Основной цикл программы.
      * Тут происходят все важные действия
      */
-    public void run() {
+    private void run() {
         //Создаем холст для отрисовки.
         Canvas canvas = new Canvas(width, height);
 
@@ -83,7 +83,7 @@ public class Space {
     /**
      * Двигаем все объекты игры
      */
-    public void moveAllItems() {
+    private void moveAllItems() {
         for (BaseObject object : getAllItems()) {
             object.move();
         }
@@ -92,7 +92,7 @@ public class Space {
     /**
      * Метод возвращает общий список, который содержит все объекты игры
      */
-    public List<BaseObject> getAllItems() {
+    private List<BaseObject> getAllItems() {
         ArrayList<BaseObject> list = new ArrayList<BaseObject>(ufos);
         list.add(ship);
         list.addAll(bombs);
@@ -103,7 +103,7 @@ public class Space {
     /**
      * Создаем новый НЛО. 1 раз на 10 вызовов.
      */
-    public void createUfo() {
+    private void createUfo() {
         if (ufos.size() > 0) return;
 
         int random10 = (int) (Math.random() * 10);
@@ -119,7 +119,7 @@ public class Space {
      * а) столкновение с кораблем (бомба и корабль умирают)
      * б) падение ниже края игрового поля (бомба умирает)
      */
-    public void checkBombs() {
+    private void checkBombs() {
         for (Bomb bomb : bombs) {
             if (ship.isIntersect(bomb)) {
                 ship.die();
@@ -153,7 +153,7 @@ public class Space {
     /**
      * Удаляем умершие объекты (бомбы, ракеты, НЛО) из списков
      */
-    public void removeDead() {
+    private void removeDead() {
 //        Iterator<BaseObject> catIterator = getAllItems().iterator();
 //        while (catIterator.hasNext()) {
 //            BaseObject baseObject = catIterator.next();
@@ -181,7 +181,7 @@ public class Space {
      * а) заполняем весь холст точками.
      * б) отрисовываем все объекты на холст.
      */
-    public void draw(Canvas canvas) {
+    private void draw(Canvas canvas) {
         //draw game
         for (int i = 0; i < width + 2; i++) {
             for (int j = 0; j < height + 2; j++) {
@@ -209,7 +209,7 @@ public class Space {
         return ship;
     }
 
-    public void setShip(SpaceShip ship) {
+    private void setShip(SpaceShip ship) {
         this.ship = ship;
     }
 
