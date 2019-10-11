@@ -4,6 +4,8 @@ public class RacingBike extends Motorbike {
     private String owner;
     private int age;
 
+    public RacingBike(){}
+
     public RacingBike(String name, String owner, int age) {
         super(name);
         this.owner = owner;
