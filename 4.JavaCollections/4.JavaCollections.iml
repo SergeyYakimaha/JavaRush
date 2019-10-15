@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.10.0" level="project" />
     <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
+    <orderEntry type="library" name="Jaxb" level="project" />
   </component>
 </module>
