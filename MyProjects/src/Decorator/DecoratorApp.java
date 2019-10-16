@@ -9,40 +9,57 @@ public class DecoratorApp {
     static class PrintNumber implements PrinterInterface{
         @Override
         public void print() {
-            System.out.println("1 2 3 4 5");
+            System.out.print("123456");
         }
     }
 
     static class PrintChars implements PrinterInterface{
         @Override
         public void print() {
-            System.out.println("z x c v b");
+            System.out.print("ZAQXSW");
         }
     }
 
-    static class addNameDecorator implements PrinterInterface {
+    static class addPlusDecorator implements PrinterInterface {
         private PrinterInterface wrapper;
 
-        public addNameDecorator(PrinterInterface wrapper) {
+        public addPlusDecorator(PrinterInterface wrapper) {
             this.wrapper = wrapper;
         }
 
         @Override
         public void print() {
-            System.out.println("-------------");
+            System.out.print(" +++ ");
             wrapper.print();
+            System.out.print(" +++ ");
+        }
+    }
+
+    static class addMinusDecorator implements PrinterInterface {
+        private PrinterInterface wrapper;
+
+        public addMinusDecorator(PrinterInterface wrapper) {
+            this.wrapper = wrapper;
+        }
+
+        @Override
+        public void print() {
+            System.out.print(" --- ");
+            wrapper.print();
+            System.out.print(" --- ");
         }
     }
 
     public static void main(String[] args) {
-        PrinterInterface chars = new PrintChars();
-        chars.print();
+        PrinterInterface pMPChars = new addMinusDecorator(new addPlusDecorator(new PrintChars()));
+        PrinterInterface pPMChars = new addPlusDecorator(new addMinusDecorator(new PrintChars()));
+        PrinterInterface pPNumber = new addPlusDecorator(new PrintNumber());
 
-        PrinterInterface pChars = new addNameDecorator(new PrintChars());
-        PrinterInterface pNumber = new addNameDecorator(new PrintNumber());
-
-        pChars.print();
-        pNumber.print();
+        pMPChars.print();
+        System.out.println();
+        pPMChars.print();
+        System.out.println();
+        pPNumber.print();
     }
 
 }
