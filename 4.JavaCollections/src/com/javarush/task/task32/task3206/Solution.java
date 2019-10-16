@@ -1,30 +1,21 @@
 package com.javarush.task.task32.task3206;
 
 import java.lang.reflect.Proxy;
-/*
+
+/* 
 Дженерики для создания прокси-объекта
 */
 public class Solution {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        test(solution.getProxy(Item.class));                        //true false false
-        test(solution.getProxy(Item.class, Small.class));           //true false true
-        test(solution.getProxy(Item.class, Big.class, Small.class));//true true true
-        test(solution.getProxy(Big.class, Small.class));            //true true true т.к. Big наследуется от Item
-        test(solution.getProxy(Big.class));                         //true true false т.к. Big наследуется от Item
+//        Solution solution = new Solution();
+//        test(solution.getProxy(Item.class));                        //true false false
+//        test(solution.getProxy(Item.class, Small.class));           //true false true
+//        test(solution.getProxy(Item.class, Big.class, Small.class));//true true true
+//        test(solution.getProxy(Big.class, Small.class));            //true true true т.к. Big наследуется от Item
+//        test(solution.getProxy(Big.class));                         //true true false т.к. Big наследуется от Item
     }
 
-    public static Object getProxy(Class<?> classType, Class<?>...args){
-        ClassLoader classLoader = classType.getClass().getClassLoader();
-        Class<?>[] interfaces = new Class[args.length];
-        ItemInvocationHandler itemInvocationHandler = new ItemInvocationHandler();
-
-        for (int i = 0; i < args.length; i++) {
-            interfaces[i] = args[i];
-        }
-        return (Item)Proxy.newProxyInstance(classLoader, interfaces, itemInvocationHandler);
-    }
 
     private static void test(Object proxy) {
         boolean isItem = proxy instanceof Item;
