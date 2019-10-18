@@ -43,6 +43,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        long[] result = getNumbers(548834);
+        long[] result = getNumbers(146511209);
+        System.out.println();
     }
 }
