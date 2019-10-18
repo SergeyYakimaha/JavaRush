@@ -16,7 +16,11 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     public AmigoSet(Collection<? extends E> collection) {
         int capacity = Math.max(16, (int) (collection.size() / .75f) + 1);
         map = new HashMap<>(capacity);
-        addAll(collection);
+
+        for (E e : collection) {
+            this.add(e);
+        }
+        //addAll(collection);
     }
 
     @Override
