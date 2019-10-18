@@ -55,7 +55,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     @Override
     public boolean contains(Object o) {
-        return super.contains(o);
+        return map.containsKey(o);
     }
 
     //implements Serializable, Cloneable, Set
