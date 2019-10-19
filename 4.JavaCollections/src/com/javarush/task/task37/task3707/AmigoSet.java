@@ -80,7 +80,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
         in.defaultReadObject();
         int capacity = in.readInt();
         float loadFactor = in.readFloat();
-        map = new HashMap<>(capacity, loadFactor);
+        this.map = new HashMap<>(capacity, loadFactor);
         List<E> list = (List<E>)in.readObject();
         for (E entry: list){
             map.put((E)entry, PRESENT);
