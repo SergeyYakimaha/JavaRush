@@ -1,5 +1,8 @@
 package com.javarush.task.task37.task3707;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
 
@@ -16,11 +19,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     public AmigoSet(Collection<? extends E> collection) {
         int capacity = Math.max(16, (int) (collection.size() / .75f) + 1);
         map = new HashMap<>(capacity);
-
-        for (E e : collection) {
-            this.add(e);
-        }
-        //addAll(collection);
+        addAll(collection);
     }
 
     @Override
@@ -55,7 +54,37 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     @Override
     public boolean contains(Object o) {
-        return map.containsKey(o);
+        return super.contains(o);
+    }
+
+    @Override
+    public Object clone() throws InternalError {
+        try {
+            AmigoSet<E> amigoSet = new AmigoSet<>();
+            amigoSet.map = (HashMap<E, Object>) this.map.clone();
+            return amigoSet;
+        } catch (Exception e) {
+            throw new InternalError(e);
+        }
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException, NullPointerException {
+        out.defaultWriteObject();
+        out.writeInt((int)HashMapReflectionHelper.callHiddenMethod(map, "capacity"));
+        out.writeFloat((float)HashMapReflectionHelper.callHiddenMethod(map, "loadFactor"));
+        //List<E> list = new ArrayList<>(map.keySet());
+        out.writeObject(new ArrayList<>(map.keySet()));
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        int capacity = in.readInt();
+        float loadFactor = in.readFloat();
+        map = new HashMap<>(capacity, loadFactor);
+        List<E> list = (List<E>)in.readObject();
+        for (E entry: list){
+            map.put((E)entry, PRESENT);
+        }
     }
 
     //implements Serializable, Cloneable, Set
