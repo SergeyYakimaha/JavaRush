@@ -1,31 +1,60 @@
 package com.javarush.task.task35.task3507;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashSet;
 import java.util.Set;
 
 /* 
 ClassLoader - что это такое?
 */
 public class Solution {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
         Set<? extends Animal> allAnimals = getAllAnimals(Solution.class.getProtectionDomain().getCodeSource().getLocation().getPath() + Solution.class.getPackage().getName().replaceAll("[.]", "/") + "/data");
         System.out.println(allAnimals);
     }
 
-    public static Set<? extends Animal> getAllAnimals(String pathToAnimals) throws ClassNotFoundException {
-        List<File> fileList =  new ArrayList<>(Arrays.asList(new File(pathToAnimals).listFiles()));
+    public static Set<? extends Animal> getAllAnimals(String pathToAnimals) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Set<Animal> classSet = new HashSet<>();
+        DynamicClassOverloader myClassLoader = new DynamicClassOverloader();
+        File[] files = new File(pathToAnimals).listFiles();
 
-        for (File file: fileList){
-            //Class clazz = Class.forName(file.getAbsolutePath());
-
+        for (File file : files) {
+            Class clazz = myClassLoader.findClass(file.getAbsolutePath());
+            Constructor[] constructors = clazz.getConstructors();
+            for (Constructor constructor : constructors) {
+                if (constructor.getParameterCount() == 0) {
+                    if (Animal.class.isAssignableFrom(clazz)) {
+                        classSet.add((Animal) constructor.newInstance());
+                        break;
+                    }
+                }
+            }
         }
+        return classSet;
+    }
 
-        System.out.println(pathToAnimals);
-        return null;
+    public static class DynamicClassOverloader extends ClassLoader {
+
+        @Override
+        protected Class<?> findClass(String name) throws ClassNotFoundException {
+            byte[] classBytes = new byte[0];
+            Class result = null;
+            try {
+                classBytes = new FileInputStream(name).readAllBytes();
+                result = defineClass(null, classBytes, 0,
+                        classBytes.length);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return result;
+        }
+    }
+
+    static class Cat {
+
     }
 }
