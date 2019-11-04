@@ -1,10 +1,11 @@
 package com.javarush.task.task35.task3507;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,10 +42,11 @@ public class Solution {
 
         @Override
         protected Class<?> findClass(String name) throws ClassNotFoundException {
-            byte[] classBytes = new byte[0];
             Class result = null;
+            File file = new File(name);
+            byte[] classBytes = new byte[(int)file.length()];
             try {
-                classBytes = new FileInputStream(name).readAllBytes();
+                new FileInputStream(file).read(classBytes);
                 result = defineClass(null, classBytes, 0,
                         classBytes.length);
             } catch (IOException e) {
