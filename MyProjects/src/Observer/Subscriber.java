@@ -2,6 +2,7 @@ package Observer;
 
 import java.util.List;
 
+// Класс-подписчик
 public class Subscriber implements Observer {
     String name;
 

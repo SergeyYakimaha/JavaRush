@@ -3,6 +3,7 @@ package Observer;
 import java.util.ArrayList;
 import java.util.List;
 
+// Класс-издатель
 public class JavaDeveloperJobSite implements Observed {
     List<String> vacancies = new ArrayList<>();
     List<Observer> subscribers = new ArrayList<>();
