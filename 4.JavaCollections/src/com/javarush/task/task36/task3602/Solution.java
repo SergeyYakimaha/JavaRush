@@ -39,6 +39,12 @@ public class Solution {
                 for (Class<?> entryInt: classesInt) {
                     System.out.println(entryInt.getSimpleName());
                 }
+                Class<?> ttt = entryClass.getSuperclass();
+                System.out.println("SuperClass: " + entryClass.getSuperclass().getSimpleName());
+                Class<?>[] superInt = getInterfeces(ttt);
+                for (Class<?> entryInt: superInt) {
+                    System.out.println(entryInt.getSimpleName());
+                }
                 System.out.println("-----------------------------");
             }
 //            System.out.println(entry.getModifiers());
