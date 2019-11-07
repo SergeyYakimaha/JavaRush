@@ -34,15 +34,14 @@ public class Solution {
         for (Class<?> entryClass : classes) {
             if (isPrivateStatic(entryClass)) {
                 System.out.println("Class: " + entryClass.getSimpleName());
-                System.out.println("Interfeces list:");
                 Class<?>[] classesInt = getInterfeces(entryClass);
                 for (Class<?> entryInt: classesInt) {
                     System.out.println(entryInt.getSimpleName());
                 }
-                Class<?> ttt = entryClass.getSuperclass();
+                Class<?> superclass = entryClass.getSuperclass();
                 System.out.println("SuperClass: " + entryClass.getSuperclass().getSimpleName());
-                Class<?>[] superInt = getInterfeces(ttt);
-                for (Class<?> entryInt: superInt) {
+                Class<?>[] superclassInt = getInterfeces(superclass);
+                for (Class<?> entryInt: superclassInt) {
                     System.out.println(entryInt.getSimpleName());
                 }
                 System.out.println("-----------------------------");
