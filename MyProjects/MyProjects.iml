@@ -10,11 +10,11 @@
     <orderEntry type="library" name="jaybird-full-java11-4.0.0-beta-1" level="project" />
     <orderEntry type="library" name="slf4j-log4j12-1.7.25" level="application" />
     <orderEntry type="library" name="slf4j-api-1.7.23" level="application" />
-    <orderEntry type="library" name="jackson-annotations-2.10.0-sources" level="application" />
     <orderEntry type="library" name="jackson-annotations-2.10.0-javadoc" level="application" />
     <orderEntry type="library" name="jaxb-api-2.3.0" level="application" />
     <orderEntry type="library" name="javax.activation-1.2.0" level="application" />
     <orderEntry type="library" name="jaxb-api-2.3.01" level="project" />
     <orderEntry type="library" name="log4j-1.2.17" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.10.0-sources" level="project" />
   </component>
 </module>
