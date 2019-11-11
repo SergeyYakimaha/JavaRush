@@ -3,6 +3,7 @@ package com.javarush.task.task33.task3306;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.IOException;
@@ -49,22 +50,24 @@ public class Solution {
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshaller.marshal(obj, writer);
     }
-
     public static class Pet {
+        @XmlElement(name = "name")
         public String name;
     }
-
-    @XmlType(name = "cat")
     @XmlRootElement
+    @XmlType(name = "cat")
     public static class Cat extends Pet {
+        @XmlElement(name = "age")
         public int age;
+        @XmlElement(name = "weight")
         public int weight;
     }
-
-    @XmlType(name = "dog")
     @XmlRootElement
+    @XmlType(name = "dog")
     public static class Dog extends Pet {
+        @XmlElement(name = "age")
         public int age;
+        @XmlElement(name = "owner")
         public String owner;
     }
 }
