@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
 public class Solution {
 
     public static void main(String[] args) {
-//        Solution solution = new Solution();
+        Solution solution = new Solution();
 //        test(solution.getProxy(Item.class));                        //true false false
 //        test(solution.getProxy(Item.class, Small.class));           //true false true
 //        test(solution.getProxy(Item.class, Big.class, Small.class));//true true true
