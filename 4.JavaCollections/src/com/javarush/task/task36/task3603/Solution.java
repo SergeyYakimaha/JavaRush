@@ -8,7 +8,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 Поиск класса по описанию
 */
 public class Solution {
-
     public static void main(String... args) {    //it's correct line
         CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList();
         list.add("A");
