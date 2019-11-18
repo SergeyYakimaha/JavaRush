@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 public class Helper {
 
     public static String generateRandomString() {
-        return BigInteger.probablePrime(130, new SecureRandom()).toString(36);
+        return new BigInteger(130, new SecureRandom()).toString(36);
     }
 
     public static void printMessage(String message) {

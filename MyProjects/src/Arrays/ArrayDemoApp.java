@@ -8,6 +8,17 @@ public class ArrayDemoApp {
     int[] b = new int[5];
 
     public static void main(String[] args) {
+        ConnectToDB connect;
+
+        List<ConnectToDB> connectToDBList = new ArrayList<>();
+        connectToDBList.add(new Firebird());
+        connectToDBList.add(new Mysql());
+        connectToDBList.add(new Oracle());
+
+        for (ConnectToDB entry: connectToDBList) {
+            entry.Connect();
+        }
+
 
     }
 }
