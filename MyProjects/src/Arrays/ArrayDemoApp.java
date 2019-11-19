@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArrayDemoApp {
@@ -8,17 +9,16 @@ public class ArrayDemoApp {
     int[] b = new int[5];
 
     public static void main(String[] args) {
-        ConnectToDB connect;
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
 
-        List<ConnectToDB> connectToDBList = new ArrayList<>();
-        connectToDBList.add(new Firebird());
-        connectToDBList.add(new Mysql());
-        connectToDBList.add(new Oracle());
-
-        for (ConnectToDB entry: connectToDBList) {
-            entry.Connect();
-        }
-
+        Iterator<Integer> iterator = list.iterator();
+        Integer i1 = iterator.next();
+        Integer i2 = iterator.next();
+        Integer i3 = iterator.next();
+        Integer i4 = iterator.next();
 
     }
 }
