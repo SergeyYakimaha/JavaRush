@@ -39,6 +39,7 @@ public class Solution {
 
         System.out.println("-- 4 --");
         System.out.println(logParser.execute("get ip"));
+
         System.out.println(logParser.execute("get user"));
         System.out.println(logParser.execute("get date"));
         System.out.println(logParser.execute("get event"));
