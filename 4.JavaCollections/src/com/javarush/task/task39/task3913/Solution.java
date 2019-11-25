@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Solution {
     public static void main(String[] args) throws IOException, ParseException {
-        LogParser logParser = new LogParser(Paths.get("c:/logs/"));
+        LogParser logParser = new LogParser(Paths.get("d:/logs/"));
 
         System.out.println("-- 1 -- ");
         System.out.println(logParser.getNumberOfUniqueIPs(null, new Date()));
@@ -39,18 +39,16 @@ public class Solution {
 
         System.out.println("-- 4 --");
         System.out.println(logParser.execute("get ip"));
-
         System.out.println(logParser.execute("get user"));
         System.out.println(logParser.execute("get date"));
         System.out.println(logParser.execute("get event"));
         System.out.println(logParser.execute("get status"));
 
         System.out.println("-- 5 --");
-        System.out.println(logParser.execute("get event for date = \"30.08.2011 16:08:13\""));
-        System.out.println(logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"13.09.2013 5:04:49\" and \"13.09.2013 5:04:50\""));
-        System.out.println(logParser.execute("get ip for event = \"DONE_TASK\" and date between \"29.2.2028 5:4:7\" and \"29.2.2028 5:4:7\""));
-        System.out.println(logParser.execute("get status for user = \"Amigo\""));
-        System.out.println(logParser.execute("get event for ip = \"192.168.100.2\""));
+        //System.out.println(logParser.execute("get event for date = \"30.08.2011 16:08:13\""));
+        System.out.println(logParser.execute("get ip for user = \"Amigo\" and date between \"11.12.2013 0:00:00\" and \"03.01.2030 23:59:59\""));
+        //System.out.println(logParser.execute("get status for user = \"Amigo\""));
+        //System.out.println(logParser.execute("get event for ip = \"192.168.100.2\""));
 
     }
 }

@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     private enum ParamsSQL {
         ip,
@@ -103,9 +103,11 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         private String value1;
         private Date after;
         private Date before;
+        private List<LogObject> logObjectList;
         private QueryType queryType;
 
         private List<String> getParamsList() {
+            int pos = -1;
             List<String> paramList = new ArrayList<>();
             for (int i = 0; i < query.length(); i++) {
                 char c = query.charAt(i);
@@ -122,6 +124,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         public SQLExecutor(String query) throws ParseException {
             this.query = query;
             this.logParser = LogParser.this;
+            this.logObjectList = logParser.logObjectList;
 
             List<String> params = getParamsList();
 
@@ -148,33 +151,12 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
             }
         }
 
-        private Set<Object> execute() throws ParseException {
-            Set<Object> objects = null;
-            switch (queryType) {
-                case QUERY_0_PARAMS :
-                    objects = executeNoParams();
-                    break;
-                case QUERY_1_PARAMS :
-                    objects = executeWithParams();
-                    break;
-                case QUERY_2_PARAMS :
-                    objects = executeParamsWithDate();
-                    break;
-            }
-            return objects;
-        }
-
-        private List<LogObject> getWhereDateDataSetLogObject() {
-            List<LogObject> logObjects = new ArrayList<>();
-            for (LogObject logObject : logParser.logObjectList) {
-
-                //if (logObject.date.compareTo(after) >= 0  && logObject.date.compareTo(before) <= 0)
-                //    logObjects.add(logObject);
-                if (logObject.date.compareTo(after) > 0  && logObject.date.compareTo(before) < 0)
-                    logObjects.add(logObject);
-
-            }
-            return logObjects;
+        public Set<Object> execute() throws ParseException {
+            Set<Object> objects;
+            if (queryType != QueryType.QUERY_0_PARAMS)
+                return executeWithParams();
+            else
+                return executeNoParams();
         }
 
         private List<LogObject> getWhereDataSetLogObjects(List<LogObject> logObjectList) throws ParseException {
@@ -234,7 +216,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         private Set<Object> executeNoParams() {
             Set<Object> objects = new HashSet<>();
 
-            for (LogObject logObject : logParser.logObjectList) {
+            for (LogObject logObject : logObjectList) {
                 switch (query) {
                     case ("get ip"):
                         objects.add((String) logObject.ip);
@@ -261,7 +243,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         }
 
         private Set<Object> executeParamsWithDate() throws ParseException {
-            return getResultDataSet(getWhereDataSetLogObjects(getWhereDateDataSetLogObject()));
+            return getResultDataSet(getWhereDataSetLogObjects(logParser.getLogObjectListConditionDate(after, before)));
         }
     }
 
