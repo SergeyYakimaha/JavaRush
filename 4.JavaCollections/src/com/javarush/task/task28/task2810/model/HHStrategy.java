@@ -17,7 +17,10 @@ public class HHStrategy implements Strategy {
 
     @Override
     public List<Vacancy> getVacancies(String searchString) throws IOException {
-        Document document = Jsoup.connect(String.format(URL_FORMAT, "Kiev", 0)).get();
+        Document document = Jsoup.connect(String.format(URL_FORMAT, "Kiev", 0))
+                .userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36")
+                .referrer("no-referrer-when-downgrade")
+                .get();
 //        Elements vacancyList = document.getElementsByClass("vacancy-short__name");
 //        for(Element vacancy : vacancyList) {
 //            String key = vacancy.attr("data-qa");
@@ -26,7 +29,7 @@ public class HHStrategy implements Strategy {
 //            Elements element1 = vacancy.getElementsByClass("vacancy-short__name");
 //        }
 
-        //System.out.println(document.html());
+        System.out.println(document.html());
         return Collections.emptyList();
     }
 
