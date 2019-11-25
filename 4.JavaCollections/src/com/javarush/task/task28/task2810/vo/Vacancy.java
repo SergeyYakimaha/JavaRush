@@ -59,6 +59,18 @@ public class Vacancy {
     }
 
     @Override
+    public String toString() {
+        return "Vacancy{" +
+                "title='" + title + '\'' +
+                ", salary='" + salary + '\'' +
+                ", city='" + city + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", siteName='" + siteName + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Vacancy)) return false;
