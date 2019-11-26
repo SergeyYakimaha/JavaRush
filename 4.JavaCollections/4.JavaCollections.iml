@@ -53,5 +53,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="net.databinder.dispatch:dispatch-jsoup_2.9.0-1:0.9.5" level="application" />
+    <orderEntry type="library" name="org.jsoup:jsoup:1.9.2" level="application" />
   </component>
 </module>
