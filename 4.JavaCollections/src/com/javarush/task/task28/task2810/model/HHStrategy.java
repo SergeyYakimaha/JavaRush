@@ -3,12 +3,10 @@ package com.javarush.task.task28.task2810.model;
 import com.javarush.task.task28.task2810.vo.Vacancy;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class HHStrategy implements Strategy {
@@ -69,13 +67,13 @@ public class HHStrategy implements Strategy {
         return vacancies;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+//    @Override
+//    public int hashCode() {
+//        return super.hashCode();
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
 }

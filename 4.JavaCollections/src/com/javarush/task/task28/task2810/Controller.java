@@ -1,20 +1,16 @@
 package com.javarush.task.task28.task2810;
 
 import com.javarush.task.task28.task2810.model.Provider;
-import com.javarush.task.task28.task2810.vo.Vacancy;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Controller {
     private Provider[] providers;
 
-    public Controller(Provider... providers) {
+    public Controller(Provider...providers) {
         if (providers == null || providers.length == 0)
             throw new IllegalArgumentException();
-        this.providers = providers;
+        this.providers = Arrays.copyOf(providers, providers.length);
     }
 
     @Override
@@ -22,15 +18,5 @@ public class Controller {
         return "Controller{" +
                 "providers=" + Arrays.toString(providers) +
                 '}';
-    }
-
-    public void scan() throws IOException {
-        if (providers != null) {
-            List<Vacancy> allVacancies = new ArrayList<>();
-            for (Provider provider : providers) {
-                allVacancies.addAll(provider.getJavaVacancies(""));
-            }
-            System.out.println(allVacancies.size());
-        }
     }
 }
