@@ -20,7 +20,7 @@ public class ConsoleHelper {
         try {
             result = bis.readLine();
             if ("EXIT".equals(result.toUpperCase())) {
-                ConsoleHelper.writeMessage(res.getString("the.end"));
+                //ConsoleHelper.writeMessage(res.getString("the.end"));
                 throw new InterruptOperationException();
             }
             return result;
@@ -70,5 +70,9 @@ public class ConsoleHelper {
             }
         }
         return null;
+    }
+
+    public static void printExitMessage() {
+        ConsoleHelper.writeMessage(res.getString("the.end"));
     }
 }

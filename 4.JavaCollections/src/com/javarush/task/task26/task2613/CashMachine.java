@@ -7,8 +7,12 @@ import java.util.Locale;
 
 public class CashMachine {
 
+    public static final String RESOURCE_PATH = CashMachine.class.getPackage().getName() + ".resources.";
+    public static Locale locale = new Locale("en", "EN");
+
     public static void main(String[] args) {
-        Locale.setDefault(Locale.ENGLISH);
+        //Locale.setDefault(Locale.ENGLISH);
+        //Locale.setDefault(Locale.GERMAN);
 
         try {
             CommandExecutor.execute(Operation.LOGIN);
@@ -18,7 +22,7 @@ public class CashMachine {
                 CommandExecutor.execute(operation);
             } while (operation != Operation.EXIT);
         } catch (InterruptOperationException e) {
-            ConsoleHelper.writeMessage("Good Buy");
+            ConsoleHelper.printExitMessage();
         }
     }
 }

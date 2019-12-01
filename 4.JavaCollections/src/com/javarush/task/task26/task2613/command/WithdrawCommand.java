@@ -11,7 +11,7 @@ import java.util.*;
 
 class WithdrawCommand implements Command {
 
-    private ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.withdraw_en");
+    private ResourceBundle res = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "withdraw_en");
 
     @Override
     public void execute() throws InterruptOperationException {
@@ -30,10 +30,6 @@ class WithdrawCommand implements Command {
                 }
                 Map<Integer, Integer> withdrawBanknotes = manipulator.withdrawAmount(sum);
                 withdrawBanknotes.keySet();
-                /*Вывести пользователю результат из п. 1.3.4. в следующем виде:
-                <табуляция>номинал - количество
-                Сортировка - от большего номинала к меньшему.
-                Sort by key (denominations) */
                 List list = new ArrayList(withdrawBanknotes.entrySet());
                 Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
                     @Override
