@@ -1,33 +1,28 @@
 package com.javarush.task.task26.task2613;
 
+import com.javarush.task.task26.task2613.command.CommandExecutor;
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.util.Locale;
 
 public class CashMachine {
+
+    public static final String RESOURCE_PATH = CashMachine.class.getPackage().getName() + ".resources.";
+    public static Locale locale = new Locale("en", "EN");
+
     public static void main(String[] args) {
-        Locale.setDefault(Locale.ENGLISH);
+        //Locale.setDefault(Locale.ENGLISH);
+        //Locale.setDefault(Locale.GERMAN);
 
-        CurrencyManipulator cmUSD = CurrencyManipulatorFactory.getManipulatorByCurrencyCode("USD");
-        CurrencyManipulator cmRUB = CurrencyManipulatorFactory.getManipulatorByCurrencyCode("RUB");
-        CurrencyManipulator cmUAH = CurrencyManipulatorFactory.getManipulatorByCurrencyCode("UAH");
-
-        CurrencyManipulator cmUSD1 = CurrencyManipulatorFactory.getManipulatorByCurrencyCode("USD");
-        CurrencyManipulator cmUSD2 = CurrencyManipulatorFactory.getManipulatorByCurrencyCode("USD");
-
-//        String currencyCode = ConsoleHelper.askCurrencyCode();
-//        String[] strings = ConsoleHelper.getValidTwoDigits(currencyCode);
-
-        //String[] usd_2_100 = ConsoleHelper.getValidTwoDigits(ConsoleHelper.askCurrencyCode());
-        //String[] usd_1_200 = ConsoleHelper.getValidTwoDigits(ConsoleHelper.askCurrencyCode());
-
-//        CurrencyManipulatorFactory.getManipulatorByCurrencyCode(currencyCode).addAmount(Integer.parseInt(strings[0]),
-//                Integer.parseInt(strings[1]));
-//
-//        System.out.println(CurrencyManipulatorFactory.getManipulatorByCurrencyCode("USD").getTotalAmount());
-
-        ConsoleHelper.askOperation();
-
-
-
-
+        try {
+            CommandExecutor.execute(Operation.LOGIN);
+            Operation operation;
+            do {
+                operation = ConsoleHelper.askOperation();
+                CommandExecutor.execute(operation);
+            } while (operation != Operation.EXIT);
+        } catch (InterruptOperationException e) {
+            ConsoleHelper.printExitMessage();
+        }
     }
 }

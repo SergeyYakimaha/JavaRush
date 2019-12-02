@@ -1,22 +1,22 @@
 package com.javarush.task.task26.task2613;
 
 public enum Operation {
+    LOGIN,
     INFO,
     DEPOSIT,
     WITHDRAW,
     EXIT;
 
     public static Operation getAllowableOperationByOrdinal(Integer i) {
-        Operation operation = null;
         switch (i) {
             case 1:
-                return Operation.INFO;
+                return INFO;
             case 2:
-                return Operation.DEPOSIT;
+                return DEPOSIT;
             case 3:
-                return Operation.WITHDRAW;
+                return WITHDRAW;
             case 4:
-                return Operation.EXIT;
+                return EXIT;
             default:
                 throw new IllegalArgumentException();
         }
